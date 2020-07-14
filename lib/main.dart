@@ -60,7 +60,7 @@ class MyImagePickerState extends State {
 
   Future classifyImage() async {
 
-    await Tflite.loadModel(model: "assets/model_unquant.tflite",labels: "assets/labels.txt");
+    await Tflite.loadModel(model: "assets/detect.tflite",labels: "assets/labelmap.txt");
     var output = await Tflite.runModelOnImage(path: path);
 
     setState(() {
